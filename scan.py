@@ -302,7 +302,7 @@ def main():
 	with ThreadPoolExecutor(max_workers=4) as ex:
 		preds = list(tqdm(ex.map(process, files), total=len(files)))
 
-	with open('result.txt', 'w') as f:
+	with open('result.csv', 'w') as f:
 		print('filename,label', file=f)
 		for i, file in enumerate(files):
 			print('%s,%.4f'%(file, preds[i]), file=f)
