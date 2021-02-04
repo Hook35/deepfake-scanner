@@ -1,0 +1,9 @@
+cv2
+dface
+numpy
+Pillow
+sklearn
+timm
+torch
+torchvision
+tqdm
