@@ -8,7 +8,7 @@ Here, we share our deepware scanner with the community, and we show its detectio
 
 ### Our Classifier
 
-We use an EfficientNet B7 model that was pre-trained on the ImageNet dataset. We trained our classifier with only Facebook's [DFDC](https://arxiv.org/abs/2006.07397) dataset, which consists of 120k videos. We trained our model to work in production, and it was trained with an emphasis on fewer false positives.
+We use an `EfficientNet B7` model that was pre-trained on the ImageNet dataset. We trained our classifier with only Facebook's [DFDC](https://arxiv.org/abs/2006.07397) dataset, which consists of 120k videos. We trained our model to work in production, and it was trained with an emphasis on fewer false positives.
 
 The model is a frame-based classifier meaning that it doesn't account for temporal coherence. Since video is a temporal medium, we consider this to be a major shortcoming that needs to be addressed. We will discuss temporal detection in the research section.
 
@@ -18,7 +18,7 @@ Facebook's DFDC dataset contains ~20k real videos and ~100k deepfakes generated 
 
 We first clustered the unique people in the dataset. To prevent overfitting to identities, 90% of the people are used for the training set, and 10% are used for the validation set. For the test set, other academic and organic datasets were used.
 
-We eliminated videos that featured multiple people for simplicity. We then extracted faces with a 1.65 margin. Commonly used augmentations were applied during training, such as `Flip`, `GaussianNoise`, `Blur`, `BrightnessContrast`, and so on.
+We eliminated videos that featured multiple people for simplicity. We then extracted faces with a `1.65` margin. Commonly used augmentations were applied during training, such as `Flip`, `GaussianNoise`, `Blur`, `BrightnessContrast`, and so on.
 
 Since the dataset is unbalanced (100k fake & 20k real), we had to balance it ourselves. A simpler approach is to pick 20k fakes and use a total of 40k videos. That approach works well if you pick the 20k fakes carefully. A better approach is using the whole dataset and sampling randomly from reals and fakes with the same frequency during training.
 
@@ -63,7 +63,7 @@ These strategy functions might not be the best for competitions, but in the real
 
 ### Detection Results
 
-Here, we share the detection results of our model on various academic and organic datasets. In addition to our model, we show the results of another model that was selected from [Seferbekov's](https://github.com/selimsef/dfdc_deepfake_challenge) DFDC (Facebook Deepfake Detection Challenge) winning solution. Both models have the same architecture and were trained on the same dataset. We used the best performing single model from Seferbekov's ensemble.
+Here, we share the detection results of our model on various academic and organic datasets. In addition to our model, we show the results of another model that was selected from [Seferbekov's](https://github.com/selimsef/dfdc_deepfake_challenge) [DFDC](https://www.kaggle.com/c/deepfake-detection-challenge) (Facebook's Deepfake Detection Challenge) winning solution. Both models have the same architecture and were trained on the same dataset. We used the best performing single model from Seferbekov's ensemble.
 
 |Dataset                        |Deepware Loss|Deepware Accuracy|Seferbekov Loss|Seferbekov Accuracy|
 |-------------------------------|-------------|-----------------|---------------|-------------------|
