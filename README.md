@@ -16,7 +16,7 @@ Make sure you have a nvidia gpu with cuda support. Scanner can run both on Windo
 
 ##### On Windows
 
-We packed all the requirements in a portable zip file including the model. You can [download](http://dodobyte.com/share/deepware.zip) the zip file and start scanning right away.
+We packed all the requirements in a portable zip file including the model. You can [download](https://download.deepware.ai/dw-offline.zip) the zip file and start scanning right away.
 
 ### Usage
 
