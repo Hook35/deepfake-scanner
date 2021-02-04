@@ -63,7 +63,7 @@ These strategy functions might not be the best for competitions, but in the real
 
 ### Detection Results
 
-Here, we share the detection results of our model on various academic and organic datasets. In addition to our model, we show the results of another model that was selected from [Seferbekov's](https://github.com/selimsef/dfdc_deepfake_challenge) [DFDC](https://www.kaggle.com/c/deepfake-detection-challenge) (Facebook's Deepfake Detection Challenge) winning solution. Both models have the same architecture and were trained on the same dataset. We used the best performing single model from Seferbekov's ensemble.
+Here, we share the detection results of our model on various academic and organic datasets. In addition to our model, we show the results of another model that was selected from [Seferbekov's](https://github.com/selimsef/dfdc_deepfake_challenge) DFDC ([Facebook's Deepfake Detection Challenge](https://www.kaggle.com/c/deepfake-detection-challenge)) winning solution. Both models have the same architecture and were trained on the same dataset. We used the best performing single model from Seferbekov's ensemble.
 
 |Dataset                        |Deepware Loss|Deepware Accuracy|Seferbekov Loss|Seferbekov Accuracy|
 |-------------------------------|-------------|-----------------|---------------|-------------------|
