@@ -12,7 +12,7 @@ Make sure you have a nvidia gpu with cuda support. Scanner can run both on Windo
 
 - Clone the repo or download it as a zip and extract to a directory.
 - Install the dependencies listed in [requirements](requirements.txt) file with `pip install -r requirements.txt`
-- Download the [pre-trained model](http://dodobyte.com/share/weights.zip) and place it in the weights directory.
+- Download the [pre-trained model](https://download.deepware.ai/weights.zip) and place it in the weights directory.
 
 ##### On Windows
 
