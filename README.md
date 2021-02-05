@@ -1,4 +1,4 @@
-## Deepware Scanner (Command Line Deepfake Scanner)
+## Deepware Scanner (Command Line Deepfake Scanner Tool)
 
 This repository contains the command-line deepfake scanner with the pre-trained models that are currently used at [deepware.ai](https://deepware.ai).
 
