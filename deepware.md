@@ -4,7 +4,7 @@
 
 As deepfake technology improves every day, deepfake detection falls behind and continues to be a major challenge. The vast majority of current solutions, including ours, are approaching deepfake detection as a generic classification task. Hence, they use ImageNet's pre-trained ConvNets and finetune them with generic augmentations. We recognize the difficulty of the problem and see the necessity of new approaches.
 
-Here, we share our deepware scanner with the community, and we show its detection results on various deepfake databases, including organic deepfake and real videos. A more advanced model that covers more deepfake algorithms, such as [avatarify](https://github.com/alievk/avatarify) runs on [deepware.ai](https://deepware.ai).
+Here, we share our deepware scanner with the community, and we show its detection results on various deepfake datasets, including organic deepfake and real videos. A more advanced model that covers more deepfake algorithms, such as [avatarify](https://github.com/alievk/avatarify) runs on [deepware.ai](https://deepware.ai).
 
 ### Our Classifier
 
@@ -35,7 +35,7 @@ This approach lets us use the whole dataset while keeping it balanced. It has pr
 
 Our scanning steps from video input to prediction score is described below:
 
-1) Decode video and read frames at 1 FPS. Thirty seconds of video produces 30 frames.
+1) Decode video and read frames at 1 FPS. 
 2) Detect every face from these frames and extract them with a margin of `1.65`.
 3) Send detected faces to our classifier, and get the individual predictions.
 4) Cluster faces with a minimum cluster size to ignore outliers and get the distinct persons (IDs) from the video.
