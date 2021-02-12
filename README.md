@@ -39,4 +39,4 @@ On windows you can use `scan.bat` file with just the video folder as input.
 
 ### Training
 
-Training scripts with a subset of [DFDC](https://ai.facebook.com/datasets/dfdc/) dataset will be published soon. Stay tuned!!!
+Training scripts with a subset of [DFDC dataset](https://ai.facebook.com/datasets/dfdc/) will be published soon. Stay tuned! :bell:
