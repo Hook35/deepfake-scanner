@@ -35,4 +35,8 @@ Here's an example command line.
 
 ```scan.py /home/user/videos weights config.json cuda:0```
 
-On windows you can use `scan.bat` file with just the video folder as input. 
+On windows you can use `scan.bat` file with just the video folder as input.
+
+### Training
+
+Training scripts with a subset of [DFDC](https://ai.facebook.com/datasets/dfdc/) dataset will be published soon. Stay tuned!!!
