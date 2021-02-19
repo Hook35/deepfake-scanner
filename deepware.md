@@ -4,7 +4,7 @@
 
 As deepfake technology improves every day, deepfake detection falls behind and continues to be a major challenge. The vast majority of current solutions, including ours, are approaching deepfake detection as a generic classification task. Hence, they use ImageNet's pre-trained ConvNets and finetune them with generic augmentations. We recognize the difficulty of the problem and see the necessity of new approaches.
 
-Here, we share our deepware scanner with the community, and we show its detection results on various deepfake datasets, including organic deepfake and real videos. A more advanced model that covers more deepfake algorithms, such as [avatarify](https://github.com/alievk/avatarify) runs on [deepware.ai](https://deepware.ai).
+Here, we share our deepware scanner with the community, and we show its detection results on various deepfake datasets, including organic deepfake and real videos. 
 
 ### Our Classifier
 
