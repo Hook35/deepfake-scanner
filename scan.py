@@ -234,7 +234,6 @@ def process(file):
 		for label in clust:
 			for idx in clust[label]:
 				id_preds[label] += [preds[idx]]
-				cv2.imwrite('1/%d.png'%idx, faces[idx][:,:,::-1])
 
 		preds = []
 		for label in clust:
