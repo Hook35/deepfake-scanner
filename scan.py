@@ -204,19 +204,19 @@ def scan(file):
 		return None, []
 
 	with torch.no_grad():
-		with autocast():
-			n = batch_size
-			splitted_faces = int(np.ceil(len(faces)/n))
-			
-			for i in range(splitted_faces):
-				faces_proc = []
-				for face in faces[i*n:(i+1)*n]:
-					face = preprocess(face)
-					faces_proc.append(face)
+		n = batch_size
+		splitted_faces = int(np.ceil(len(faces)/n))
 
-				x = torch.stack(faces_proc)
+		for i in range(splitted_faces):
+			faces_proc = []
+			for face in faces[i*n:(i+1)*n]:
+				face = preprocess(face)
+				faces_proc.append(face)
+
+			x = torch.stack(faces_proc)
+			with autocast():
 				y = deepware(x.to(device))
-				preds.append(y)
+			preds.append(y)
 
 	preds = torch.sigmoid(torch.cat(preds, dim=0))[:,0].cpu().numpy()
 	return list(preds), faces
