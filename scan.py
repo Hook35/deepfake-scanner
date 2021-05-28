@@ -285,7 +285,7 @@ def init(models_dir, cfg_file, dev):
 		del checkpoint
 		model_list.append(b3_model)
 
-	deepware = Ensemble(model_list).eval().to(device).half()
+	deepware = Ensemble(model_list).eval().to(device)
 
 
 def main():
