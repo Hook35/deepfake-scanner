@@ -1,4 +1,5 @@
 import os, sys, glob, time, json
+from collections import defaultdict
 import cv2
 import torch
 import torch.nn as nn
@@ -122,21 +123,12 @@ def cluster(faces):
 	dbscan = DBSCAN(eps=0.35, metric='cosine', min_samples=scan_fps*5)
 	labels = dbscan.fit_predict(embeds)
 
-	clusters = {}
-	bad = {0:[]}
-	for idx in range(len(labels)):
-		label = labels[idx]
-		if label < 0:
-			bad[0] += [idx]
-			continue
-		if label in clusters:
-			clusters[label] += [idx]
-		else:
-			clusters[label] = [idx]
-
-	if len(clusters) == 0:
-		if len(bad) >= scan_fps*5:
-			clusters = bad
+	clusters = defaultdict(list)
+	for idx, label in enumerate(labels):
+		clusters[label].append(idx)
+	bad = {0: clusters.pop(-1, [])} # pop out bad cases
+	if len(clusters) == 0 and len(bad[0]) >= scan_fps*5: # if only bad cases present and lasts for 5 seconds more
+		return bad
 	return clusters
 
 
@@ -232,17 +224,13 @@ def process(file):
 		if len(clust) == 0:
 			return 0.5
 
-		id_preds = {label:[] for label in clust}
+		id_preds = defaultdict(list)
 
-		for label in clust:
-			for idx in clust[label]:
-				id_preds[label] += [preds[idx]]
+		for label, indices in clust.items():
+			for idx in indices:
+				id_preds[label].append(preds[idx])
 
-		preds = []
-		for label in clust:
-			pred = id_strategy(id_preds[label])
-			preds.append(pred)
-
+		preds = [id_strategy(preds) for preds in id_preds.values()]
 		if len(preds) == 0:
 			return 0.5
 
