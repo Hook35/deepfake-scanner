@@ -126,8 +126,8 @@ def cluster(faces):
 	clusters = defaultdict(list)
 	for idx, label in enumerate(labels):
 		clusters[label].append(idx)
-	bad = {0: clusters.pop(-1, [])} # pop out bad cases
-	if len(clusters) == 0 and len(bad[0]) >= scan_fps*5: # if only bad cases present and lasts for 5 seconds more
+	bad = {0: clusters.pop(-1, [])}
+	if len(clusters) == 0 and len(bad[0]) >= scan_fps*5:
 		return bad
 	return clusters
 
